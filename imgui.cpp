@@ -13710,18 +13710,6 @@ void ImGui::DockNodeTreeUpdatePosSize(ImGuiDockNode* node, ImVec2 pos, ImVec2 si
             child_0_size[axis] = child_0->SizeRef[axis] = (size_avail - child_1_size[axis]);
             IM_ASSERT(child_0->SizeRef[axis] > 0.0f && child_1->SizeRef[axis] > 0.0f);
         }
-
-        // 3) If one window is the central node (~ use remaining space, should be made explicit!), use explicit size from the other, and remainder for the central node
-        else if (child_1->IsCentralNode() && child_0->SizeRef[axis] != 0.0f)
-        {
-            child_0_size[axis] = ImMin(size_avail - size_min_each, child_0->SizeRef[axis]);
-            child_1_size[axis] = (size_avail - child_0_size[axis]);
-        }
-        else if (child_0->IsCentralNode() && child_1->SizeRef[axis] != 0.0f)
-        {
-            child_1_size[axis] = ImMin(size_avail - size_min_each, child_1->SizeRef[axis]);
-            child_0_size[axis] = (size_avail - child_1_size[axis]);
-        }
         else
         {
             // 4) Otherwise distribute according to the relative ratio of each SizeRef value
