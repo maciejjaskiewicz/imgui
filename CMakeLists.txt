@@ -15,6 +15,8 @@ set(IMGUI_SOURCES
     ${IMGUI_CORE_PATH}/imstb_textedit.h
     ${IMGUI_CORE_PATH}/imstb_truetype.h
     ${IMGUI_CORE_PATH}/imgui_demo.cpp
+    ${IMGUI_CORE_PATH}/misc/cpp/imgui_stdlib.h
+    ${IMGUI_CORE_PATH}/misc/cpp/imgui_stdlib.cpp
 )
 
 add_library(ImGui STATIC ${IMGUI_SOURCES})
